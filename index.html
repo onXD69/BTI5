@@ -468,16 +468,11 @@
         }
 
         /* SECTION PROMOSI & SPONSORSHIP */
-        .sponsorship-section {
-            background: rgba(26, 2, 6, 0.96);
-            backdrop-filter: blur(10px);
-            padding: 100px 10%;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
+        .sponsorship-section 
 
         .promo-subsection-title {
             font-family: 'Cinzel', serif;
-            color: #E6C594;
+            color: #ffffff;
             font-size: 1.5rem;
             margin: 40px 0 20px 0;
             text-align: center;
@@ -646,7 +641,7 @@
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 0px;
             background: #1A0206;
             color: #8C6A6E;
             font-size: 0.9rem;
@@ -678,7 +673,10 @@
 
     <div class="content-layer">
         <header>
-            <div class="logo-text">DARUNNAJAH</div>
+           <a href="https://darunnajah.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+        <div class="logo-text">DARUNNAJAH</div>
+        </a>
+
             <nav>
                 <a href="#">Beranda</a>
                 <a href="#profil">Profil</a>
@@ -770,7 +768,7 @@
 
         <!-- Bagian 3: LATAR BELAKANG & TUJUAN ACARA -->
         <section id="latar-acara" class="event-intro-section">
-            <h2 class="section-title">Esensi Pagelaran</h2>
+            <h2 class="section-title">Esensi Acara</h2>
             <p class="section-tagline">Landasan nilai dan cita-cita luhur di balik panggung seni</p>
             
             <div class="intro-grid">
@@ -848,9 +846,77 @@
             <h2 class="section-title">Struktur Kepanitiaan</h2>
             <p class="section-tagline">Susunan fungsional penggerak pergelaran Bhinneka Tunggal Ika</p>
             
+            <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFF; color: #FFFFFF; overflow-x: hidden; }
+        
+        /* --- CSS Tambahan untuk Kartu Memanjang --- */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .committee-card {
+            background: rgba(74, 14, 23, 0.35);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Class baru untuk membuat kartu melebar 2 kolom */
+        .committee-card.wide {
+            grid-column: span 2;
+        }
+
+        .committee-card:hover { border-color: #D4AF37; background: rgba(74, 14, 23, 0.55); transform: translateY(-5px); }
+        
+        .committee-card h3 {
+            font-family: 'Cinzel', serif; color: #D4AF37; font-size: 1.2rem;
+            margin-bottom: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px; display: flex; align-items: center; gap: 10px;
+        }
+
+        .committee-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0 15px; }
+        .committee-list li { color: #FFF6E5; font-size: 0.95rem; padding: 6px 0; border-bottom: 1px solid rgba(255, 246, 229, 0.05); }
+
+        @media (max-width: 968px) {
+            .committee-card.wide { grid-column: span 1; }
+        }
+        /* --- Akhir CSS Tambahan --- */
+
+        /* Sisa style tetap sama seperti sebelumnya */
+        #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; pointer-events: none; }
+        .content-layer { position: relative; z-index: 2; width: 100%; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 10%; background: linear-gradient(to bottom, rgba(45,5,11,0.9), transparent); position: absolute; width: 100%; top: 0; left: 0; }
+        .logo-text { font-family: 'Cinzel', serif; font-size: 24px; color: #D4AF37; letter-spacing: 2px; }
+        nav a { color: #E6C594; text-decoration: none; margin-left: 25px; font-weight: 500; }
+        .section-title { font-family: 'Cinzel', serif; text-align: center; color: #D4AF37; font-size: 2.5rem; margin-bottom: 50px; }
+            .committee-section { background: rgba(45, 5, 11, 0.9); padding: 100px 10%; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+            footer { text-align: center; padding: 40px; background: #1A0206; color: #8C6A6E; }
+        </style>
+    </head>
+    <body>
+
+    <div id="canvas-container"></div>
+
+    <div class="content-layer">
+        <header>
+            <div class="logo-text">DARUNNAJAH</div>
+            <nav><a href="#">Beranda</a><a href="#kepanitiaan">Kepanitiaan</a></nav>
+        </header>
+
+        <section id="kepanitiaan" class="committee-section">
+            <h2 class="section-title">Struktur Kepanitiaan</h2>
+            
             <div class="committee-grid">
-                <!-- Dewan Pelindung -->
-                <div class="committee-card">
+                <!-- Dewan Pelindung (Ditambahkan class wide) -->
+                <div class="committee-card wide">
                     <h3><i class="fa-solid fa-shield-halved"></i> Dewan Pelindung</h3>
                     <ul class="committee-list">
                         <li>Assoc. Prof. Dr. KH. Sofwan Manaf, M.Si</li>
@@ -858,8 +924,8 @@
                     </ul>
                 </div>
 
-                <!-- Pembimbing -->
-                <div class="committee-card">
+                <!-- Pembimbing (Ditambahkan class wide) -->
+                <div class="committee-card wide">
                     <h3><i class="fa-solid fa-chalkboard-user"></i> Pembimbing</h3>
                     <ul class="committee-list">
                         <li>Ust. Achmad Taufiq Nur Fauzi</li>
@@ -1054,11 +1120,11 @@
                 </div>
             </div>
 
-            <!-- Backdrop Section -->
-            <div class="backdrop-showcase">
-                <h4>Backdrop Utama Panggung & Photobooth</h4>
-                <p>Eksposur berskala besar melalui penempatan slot logo melingkar eksklusif di dinding latar belakang utama acara</p>
-            </div>
+                <!-- Backdrop Section -->
+                    <div class="backdrop-showcase">
+                    <h4>Backdrop Utama Panggung</h4>
+                    <p>Eksposur berskala besar melalui penempatan slot logo melingkar eksklusif di dinding latar belakang utama acara</p>
+                </div>
 
 <!-- Subjudul Media Digital di Atas Kotak Media Sosial -->
 <h3 class="promo-subsection-title" style="margin-top: 50px;">Media Digital</h3>
@@ -1140,7 +1206,7 @@
 <!-- ========================================== -->
 <section class="promo-section" style="margin-top: 60px; padding: 0 15px;">
     <h3 class="promo-subsection-title">Paket Partnership</h3>
-    <p style="text-align: center; font-family: 'Poppins', sans-serif; color: #3d0c0c; margin-top: 15px; font-weight: 500;">Bentuk partisipasi Partnership adalah sebagai berikut:</p>
+    <p style="text-align: center; font-family: 'Poppins', sans-serif; color: #ffffff; margin-top: 15px; font-weight: 500;">Bentuk partisipasi Partnership adalah sebagai berikut:</p>
     
     <div style="max-width: 900px; margin: 20px auto 0 auto; overflow-x: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px;">
         <table style="width: 100%; min-width: 700px; border-collapse: collapse; font-family: 'Poppins', sans-serif; border: 1px solid #000;">
